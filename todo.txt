@@ -1,0 +1,22 @@
+Routing
+Contact information
+
+----- Pages -----
+Home page
+Information page 
+Test page
+
+
+---- DB -----
+Connect DB
+Add entry
+
+Entry {
+    name,
+    phone,
+    email,
+    city,
+    country,
+    tasks,
+    availability
+}
