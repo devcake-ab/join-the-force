@@ -3,8 +3,6 @@ import Button from 'react-bootstrap/Button'
 
 import { useSelector, useDispatch } from 'react-redux'
 
-import Submission from '../models/submission'
-
 export default function HomeScreen() {
     const user = useSelector(state => state.user)
     const handleOnClick = () => {
