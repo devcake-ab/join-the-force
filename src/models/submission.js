@@ -1,11 +1,14 @@
 
 export default class Submission {
-    constructor(name, phoneNumber) {
-        this.name = name
-        this.phoneNumber = phoneNumber
-    }
-
-    sayhello() {
-        console.log(this.name, this.phoneNumber)
+    constructor() {
+        this.name = ""
+        this.phoneNumber = ""
+        this.email = ""
+        this.availability = ""
+        this.suggestedTasks = ""
+        this.location = {
+            city: "",
+            country: "",
+        }
     }
 }
