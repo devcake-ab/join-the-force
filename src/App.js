@@ -7,11 +7,13 @@ import store from './redux/store'
 
 function App() {
   return (
-    <Provider store={store}>
-      <Router history={history}>
-        <Routes />
-      </Router>
-    </Provider>
+    <div id="b-o">
+      <Provider store={store}>
+        <Router history={history}>
+          <Routes />
+        </Router>
+      </Provider>
+    </div>
   )
 }
 export default App
