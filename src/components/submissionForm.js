@@ -2,13 +2,17 @@ import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
-
 
 export default function SubmissionForm() {
 
     const [form, setFormState] = useState({
         name: '',
+        email: '',
+        country: '',
+        city: '',
+        phoneNumber: '',
+        availabillity: '',
+        tasks: ''
     })
 
     const updateField = e => {
@@ -19,47 +23,111 @@ export default function SubmissionForm() {
             [e.target.name]: e.target.value
         })
         console.log(form)
-        // if (elementName.includes('answerbox')) {
-        //     const idx = elementName.slice(elementName.length - 1, elementName.length)
-        //     const formAnswers = [...form.answers]
-        //     formAnswers[idx] = e.target.value
-        //     setFormState({
-        //         ...form,
-        //         answers: formAnswers
-        //     })
-        // } else {
-
-        // }
     };
 
     const onSubmit = async (e) => {
         e.preventDefault()
+        console.log(form)
     }
 
     return (
         <Form onSubmit={(e) => onSubmit(e)}>
             <Form.Group as={Col} controlId="formBasicEmail">
-                <Form.Label>Form</Form.Label>
+                <Form.Label><h2>Enter information below</h2></Form.Label>
+
                 {/* Name */}
+                <FormRow
+                    label="Name"
+                    name="name"
+                    placeholder="Full name"
+                    value={form.name}
+                    onChange={updateField}
+                />
 
-                <Form.Group as={Row} controlId="formBasicEmail">
+                {/* Email */}
+                <FormRow
+                    label="Email"
+                    name="email"
+                    placeholder="email"
+                    value={form.email}
+                    onChange={updateField}
+                />
 
-                    <Form.Label> Name: </Form.Label>
+                {/* Country */}
+                <FormRow
+                    label="Country"
+                    name="country"
+                    placeholder="Country"
+                    value={form.country}
+                    onChange={updateField}
+                />
+
+                {/* City */}
+                <FormRow
+                    label="City"
+                    name="city"
+                    placeholder="City"
+                    value={form.city}
+                    onChange={updateField}
+                />
+
+                {/* Phone Number */}
+                <FormRow
+                    label="Phone Number"
+                    name="phoneNumber"
+                    placeholder="Phone Number"
+                    value={form.phoneNumber}
+                    onChange={updateField}
+                    inputType="number"
+                />
+
+                {/* Describe availabillity */}
+                <Form.Group controlId="exampleForm.ControlTextareaAvailabillity">
+                    <Form.Label>At what times you are available?</Form.Label>
                     <Form.Control
-                        name={`name`}
-                        key={`fullName`}
-                        type="text"
-                        placeholder={`Enter full name`}
-                        value={form.name}
-                        onChange={e => updateField(e)} />
+                        as="textarea"
+                        rows="4"
+                        name="availabillity"
+                        placeholder="Example: I work mon-fri 08.00 - 16.00 however if needed I'll be there!"
+                        value={form.availabillity}
+                        onChange={(e) => updateField(e)}
+
+                    />
                 </Form.Group>
 
+                {/* Preferred tasks */}
+                <Form.Group controlId="exampleForm.ControlTextAreaTasks">
+                    <Form.Label>Preferred tasks if any</Form.Label>
+                    <Form.Control
+                        as="textarea"
+                        rows="4"
+                        name="tasks"
+                        placeholder="Example: Help test new patients.."
+                        value={form.tasks}
+                        onChange={(e) => updateField(e)}
 
+                    />
+                </Form.Group>
 
                 {/* Submit  */}
                 <Button variant="primary" type="submit"> Submit </Button>
 
             </Form.Group>
         </Form>
+    )
+}
+
+//key, name, type, placeholder, value, onchange, inputType
+const FormRow = (props) => {
+    return (
+        <Form.Group controlId="formName">
+            <Form.Label>{props.label}</Form.Label>
+            <Form.Control
+                name={props.name}
+                type={props.inputType ? props.inputType : "text"}
+                placeholder={props.placeholder}
+                value={props.value}
+                onChange={e => props.onChange(e)} />
+        </Form.Group >
     )
 }
