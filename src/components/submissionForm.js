@@ -3,7 +3,9 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col'
 
-export default function SubmissionForm() {
+import { validateFormData } from '../models/submission'
+
+export default function SubmissionForm(props) {
 
     const [form, setFormState] = useState({
         name: '',
@@ -12,12 +14,10 @@ export default function SubmissionForm() {
         city: '',
         phoneNumber: '',
         availabillity: '',
-        tasks: ''
+        preferredTasks: ''
     })
 
     const updateField = e => {
-        const elementName = e.target.name
-        // If true then its an answer being filled
         setFormState({
             ...form,
             [e.target.name]: e.target.value
@@ -28,6 +28,16 @@ export default function SubmissionForm() {
     const onSubmit = async (e) => {
         e.preventDefault()
         console.log(form)
+        // TODO: validation
+        let formIsValid = false
+        const validatedSubmission = validateFormData(form)
+        if (validatedSubmission.errors) {
+            console.log("Not valid form")
+            // TODO: Fix boxes to light up red and shit
+        } else {
+            formIsValid = true
+        }
+        if (formIsValid && props.onSubmit) props.onSubmit(validatedSubmission.data)
     }
 
     return (
@@ -101,11 +111,24 @@ export default function SubmissionForm() {
                     <Form.Control
                         as="textarea"
                         rows="4"
-                        name="tasks"
+                        name="preferredTasks"
                         placeholder="Example: Help test new patients.."
                         value={form.tasks}
                         onChange={(e) => updateField(e)}
 
+                    />
+                </Form.Group>
+
+                {/* Relevant Experiences */}
+                <Form.Group controlId="exampleForm.ControlTextAreaTasks">
+                    <Form.Label>Relevant Experiences if any</Form.Label>
+                    <Form.Control
+                        as="textarea"
+                        rows="4"
+                        name="experiences"
+                        placeholder="Example: Volunteered at a hospital aroad four years ago"
+                        value={form.experiences}
+                        onChange={(e) => updateField(e)}
                     />
                 </Form.Group>
 
