@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "question": "How often should you...?",
+        "answers": [
+            "Less than one time per day.",
+            "Less than one time per week.",
+            "Less than one time per month."
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": 2,
+        "question": "If a medicine is out of...?",
+        "answers": [
+            "You should throw it away.",
+            "You should put it back into the.",
+            "You should contact the staff."
+        ],
+        "correctAnswer": 3
+    },
+    {
+        "id": 3,
+        "question": "How often can you...?",
+        "answers": [
+            "Between once or twice.",
+            "3 or 4 times.",
+            "Never."
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": 4,
+        "question": "Should you wash your hands?",
+        "answers": [
+            "Yes.",
+            "Yes.",
+            "Yes."
+        ],
+        "correctAnswer": 1
+    }
+]
