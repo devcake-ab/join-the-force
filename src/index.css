@@ -18,6 +18,7 @@ code {
 /* Paragraphs */
 #b-o p {
   font-weight: 500;
+  font-size: 1.4rem;
 }
 
 /* All text */
@@ -47,7 +48,11 @@ No media query since this is the default in Bootstrap
 */
 
 /* Small devices (landscape phones, 576px and smaller) */
-@media (max-width: 576px) {  }
+@media (max-width: 576px) {
+  #b-o .pt-5 {
+    padding-top: 1rem !important;
+  }
+}
 
 /* Medium devices (tablets, 767px and smaller */
 @media (max-width: 767px) {  }
