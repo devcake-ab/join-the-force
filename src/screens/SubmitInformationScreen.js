@@ -11,16 +11,16 @@ export default function SubmitInformationPage() {
     const handleOnSubmit = (submission) => {
         console.log(submission)
         // TODO: add creates a unique ID. Connect ID to a BankID sign
-    firestore.collection("submissions").add(Object.assign({}, submission))
-        .then(res => res.id)
-        .then(documentId => {
-            console.log("Här har vi ett ID.", documentId)
-            setHasSubmitted(true)
-        })
-        .catch(err => console.log("Error adding document", err)) // TODO: Update UI
+        firestore.collection("submissions").add(Object.assign({}, submission))
+            .then(res => res.id)
+            .then(documentId => {
+                console.log("Här har vi ett ID.", documentId)
+                setHasSubmitted(true)
+            })
+            .catch(err => console.log("Error adding document", err)) // TODO: Update UI
     }
 
-    if (!hasSubmitted) {
+    if (hasSubmitted) {
         return (
             <ThanksForSubmitting />
         )

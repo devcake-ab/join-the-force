@@ -7,6 +7,7 @@ import Image from 'react-bootstrap/Image'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import { generateQuestions } from '../models/questionFunctions'
+import history from '../navigation/history'
 
 // Images
 import Computer from '../assets/images/computer.svg'
@@ -15,6 +16,9 @@ import Computer from '../assets/images/computer.svg'
 import JSONData from '../data/questions.json'
 
 const TestScreen = () => {
+    const handleOnSubmit = () => {
+        history.push('/submit')
+    }
     return (
         <div>
             <NavbarCustom />
@@ -35,7 +39,7 @@ const TestScreen = () => {
                         <Image src={Computer} fluid />
                     </Col>
                 </Row>
-                <Form>
+                <Form onSubmit={handleOnSubmit}>
                     {generateQuestions(JSONData)}
                     <Button variant="primary" type="submit">
                         Submit
