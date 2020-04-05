@@ -47,7 +47,7 @@ export default function SubmissionForm(props) {
 
                 {/* Name */}
                 <FormRow
-                    label="Name"
+                    label="Full name"
                     name="name"
                     placeholder="Full name"
                     value={form.name}
@@ -121,7 +121,7 @@ export default function SubmissionForm(props) {
 
                 {/* Relevant Experiences */}
                 <Form.Group controlId="exampleForm.ControlTextAreaTasks">
-                    <Form.Label>Relevant Experiences if any</Form.Label>
+                    <Form.Label>Relevant Experiences / merits </Form.Label>
                     <Form.Control
                         as="textarea"
                         rows="4"
