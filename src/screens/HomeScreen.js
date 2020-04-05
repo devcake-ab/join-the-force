@@ -19,7 +19,7 @@ import history from '../navigation/history'
 export default function HomeScreen() {
     const user = useSelector(state => state.user)
     const handleTakeTestOnClick = () => { history.push('/test') }
-    const handleLearnMoreOnClick = () => { history.push('/learnMore') }
+    const handleLearnMoreOnClick = () => { history.push('/learn-more') }
 
     return (
         <div>
