@@ -37,7 +37,8 @@ export default function SubmitInformationPage() {
 const ThanksForSubmitting = () => {
     return (
         <div>
-            <h2>Thanks for submitting</h2>
+            <h2>Thank you for submitting</h2>
+            <h4>Not all heroes wear capes</h4>
             <Button className="mr-3" variant="secondary" onClick={() => history.push('/home')}>Back to home</Button>
         </div>
     )
