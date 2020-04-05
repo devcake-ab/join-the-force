@@ -11,12 +11,12 @@ const NavbarCustom = () => {
     return (
         <Navbar bg="light" expand="lg">
             <Container>
-            <Navbar.Brand href="#home"><Image src={Logo} style={{ width: '25%' }} /></Navbar.Brand>
+            <Navbar.Brand href="/"><Image src={Logo} style={{ width: '25%' }} /></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                    <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#link">About</Nav.Link>
+                    <Nav.Link href="/">Home</Nav.Link>
+                    <Nav.Link href="/learn-more">About</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
             </Container>

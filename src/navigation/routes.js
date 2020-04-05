@@ -21,7 +21,7 @@ export default function Routes() {
             <PrivateRoute path="/" exact component={HomeScreen} />
             <PrivateRoute path="/information" exact component={InformationScreen} />
             <Route path="/test" exact component={TestScreen} isPrivate={true} />
-            <Route path="/learnMore" exact component={learnMoreScreen} />
+            <Route path="/learn-more" exact component={learnMoreScreen} />
             <PrivateRoute path="/submit" exact component={SubmitInformationScreen} />
             {/* redirect user to SignIn page if PrivateRoute does not exist and user is not authenticated */}
             <PrivateRoute component={HomeScreen} />
