@@ -14,11 +14,12 @@ import Info from '../assets/images/info.svg'
 import Test from '../assets/images/test.svg'
 import Data from '../assets/images/data.svg'
 
+import history from '../navigation/history'
+
 export default function HomeScreen() {
     const user = useSelector(state => state.user)
-    const handleOnClick = () => {
-
-    }
+    const handleTakeTestOnClick = () => { history.push('/test') }
+    const handleLearnMoreOnClick = () => { history.push('/learnMore') }
 
     return (
         <div>
@@ -39,8 +40,8 @@ export default function HomeScreen() {
                 </Row>
                 <Container>
                     <Row>
-                        <Button className="mr-3" variant="secondary" onClick={handleOnClick}>learn more</Button>
-                        <Button onClick={handleOnClick}>take the test</Button>
+                        <Button className="mr-3" variant="secondary" onClick={handleLearnMoreOnClick}>learn more</Button>
+                        <Button onClick={handleTakeTestOnClick}>take the test</Button>
                     </Row>
                 </Container>
                 <Container className="pt-5">
